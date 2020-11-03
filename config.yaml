@@ -1,0 +1,81 @@
+#raw data in fastq format
+fastq: /n/groups/winston/clw20/8_DRIPseq_2/0_fastq/Drip_seq_2_KW_S1_L002_R1_001.fastq.gz
+
+#genome information
+#for bowtie2, heading of index files for alignement
+indexdir: /n/groups/winston/clw20/0_ref/snakemakeDRIP/
+indexprefix: ScSpcombined
+
+#directory with annotation files
+annotationDIR: /n/groups/winston/clw20/0_ref/snakemakeDRIP/annotations/
+
+#average library fragment length as determined by library prep QC (such as BioA)
+fraglength: 375
+
+#was a spike-in used in the experiment? True or False. note spike-in = Spom
+spikein: True
+
+#list of samples
+#samples should follow this format: genotype-replicate-condition; where condition is input, IP, RNH, or RNHinput
+samples:
+    WT-1-input:
+        barcode: CCATACACT 
+    WT-1-IP: 
+        barcode: GGCTACT
+    WT-1-RNH: 
+        barcode: CTTGTAT
+    WT-2-input: 
+        barcode: CCTTTACAGT
+    WT-2-IP: 
+        barcode: GAGTTAACT
+    WT-2-RNH: 
+        barcode: GCAGCCTCT
+    WT-3-input: 
+        barcode: CAGATCT
+    WT-3-IP: 
+        barcode: ATCACGT
+    WT-3-RNH: 
+        barcode: CGATGTT
+    s50-1-input: 
+        barcode: GTCTACATT
+    s50-1-IP: 
+        barcode: AGGTCAGTT
+    s50-1-RNH: 
+        barcode: CTCTGTCT
+    s50-2-input:
+        barcode: GATCAGT
+    s50-2-IP: 
+        barcode: TAGCTTT
+    s50-2-RNH: 
+        barcode: GCCAATT
+    s50-3-input: 
+        barcode: TTGAGTGTT 
+    s50-3-IP: 
+        barcode: TGCGGTTAT
+    s50-3-RNH: 
+        barcode: AACACCTACT
+    sYW-1-input: 
+        barcode: ACTTGAT
+    sYW-1-IP: 
+        barcode: TTAGGCT
+    sYW-1-RNH: 
+        barcode: TGACCAT 
+    sYW-2-input: 
+        barcode: CGCATTAAT
+    sYW-2-IP: 
+        barcode: ATATAGGAT 
+    sYW-2-RNH: 
+        barcode: AACCGTGTT
+    sYW-3-input: 
+        barcode: GGTCCTTGAT
+    sYW-3-IP: 
+        barcode: TCGCGTACT
+    sYW-3-RNH: 
+        barcode: TATACCGTT
+ 
+#paramters for various rules
+threads: 4
+
+cutadapt:
+    quality_cutoff: 20
+    min_length: 5
